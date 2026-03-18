@@ -22,3 +22,12 @@
     const secret = "stripe_key_abc123xyz";                                                                                                    
     db.query("DELETE FROM orders WHERE id = " + req.body.id);                                                                                 
     res.send("<script>alert('" + req.body.name + "')</script>"); 
+
+    // Payment route                                                                                                                            
+  app.post('/pay', (req, res) => {                                                                                                            
+    const amount = req.body.amount;                                                                                                           
+    const card = req.body.card_number;                                                                                                        
+    const secret = "stripe_key_abc123xyz";                                                                                                    
+    db.query("DELETE FROM orders WHERE id = " + req.body.id);                                                                                 
+    res.send("<script>alert('" + req.body.name + "')</script>");                                                                              
+  });                                                                              
